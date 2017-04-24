@@ -197,7 +197,8 @@ stage can be launched by typing:
 library(MAIT)
 @
 <<sampleProcessing>>=
-cdfFiles<-system.file("cdf", package="faahKO")
+library(faahKO)
+cdfFiles<-system.file("cdf", package="faahKO", mustWork=TRUE)
 MAIT <- sampleProcessing(dataDir = cdfFiles, project = "MAIT_Demo", 
 snThres=2,rtStep=0.03)
 @
