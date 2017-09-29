@@ -1,7 +1,7 @@
 Package: MAIT
 Type: Package
 Title: Statistical Analysis of Metabolomic Data
-Version: 1.11.1
+Version: 1.11.2
 Date: 10-3-2014
 Author: Francesc Fernandez-Albert, Rafael Llorach, Cristina
         Andres-LaCueva, Alexandre Perera
@@ -19,4 +19,4 @@ Imports:
         gplots,e1071,class,MASS,plsgenomics,agricolae,xcms,methods,caret
 Suggests: faahKO
 Enhances: rgl
-PackageStatus: Deprecated
+
