@@ -21,6 +21,8 @@
 
 FisherLSD <- function(data,classes,index,DFerror,MSerror,numClasses){
 	LSD <- LSD.test(y=data[index,],trt=classes,DFerror=DFerror,MSerror=MSerror);
+	LSD$groups$trt<- rownames(LSD$groups)
+	LSD$groups$M<- LSD$groups$groups
 	LSD <- LSD$groups[order(LSD$groups$trt),]
 	groups <- paste(LSD$M[1],LSD$M[2],sep=" ")
 	for (i in c(3:(numClasses))){
