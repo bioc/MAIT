@@ -6,14 +6,15 @@
 }
 \usage{
   sampleProcessing(dataDir = NULL, 
-                   snThres = 2, 
+                   snThres = 5, 
                    Sigma = 5/2.3548,
 		   mzSlices = 0.3, 
 		   retcorrMethod = "loess", 
 		   groupMethod = "density", 
 		   bwGroup = 3, 
 		   mzWidGroup = 0.25,
-		   filterMethod = "matchedFilter",
+		   filterMethod = "centWave",
+		   prefilter = c(3,3000),
   		   rtStep = 0.03, 
 		   nSlaves = 0, 
 		   minfrac = 0.5,
@@ -53,6 +54,9 @@ Signal to noise ratio. Setting a high value of this parameter will lead to a hig
 \item{filterMethod}{
     Filtering method applied in the peak detection step.
   }
+\item{prefilter}{
+  c(k, I)specifying the prefilter step for the first analysis step(ROI detection).  Mass traces are only retained if they contain at least k peakswith intensity>= I.
+}
 \item{rtStep}{
    Step size to use for profile generation.
   }

@@ -57,14 +57,15 @@
 
 
 sampleProcessing <- function(dataDir=NULL,
-                             snThres=2,
+                             snThres=5,
                              Sigma=5/2.3548,
                              mzSlices=0.3,
                              retcorrMethod="loess",
                              groupMethod="density",
                              bwGroup=3,
                              mzWidGroup=0.25,
-                             filterMethod="matchedFilter",
+                             filterMethod="centWave",
+                             prefilter= c(3,3000),
                              rtStep=0.03,
                              nSlaves=0,
                              minfrac=0.5,
@@ -182,10 +183,10 @@ if (!is.null(project)) {
 ##########################################################################################################################################################
 
         if (filterMethod=="matchedFilter"){
-	peaks<- xcmsSet(files=fileList,snthresh=snThres,method=filterMethod,sigma=Sigma,max=3,step=rtStep,mzdiff=mzSlices,sclass=classes,nSlaves=nSlaves,fwhm=fwhm)
+	peaks<- xcmsSet(files=fileList,snthresh=snThres,method=filterMethod,sigma=Sigma,max=3,step=rtStep,mzdiff=mzSlices,sclass=classes,nSlaves=nSlaves,fwhm=fwhm,prefilter=prefilter)
       }
         if (filterMethod=="centWave"){
-        peaks<- xcmsSet(files=fileList,snthresh=snThres,method=filterMethod,ppm=ppm,mzdiff=mzSlices,sclass=classes,nSlaves=nSlaves,peakwidth=peakwidth)
+        peaks<- xcmsSet(files=fileList,snthresh=snThres,method=filterMethod,ppm=ppm,mzdiff=mzSlices,sclass=classes,nSlaves=nSlaves,peakwidth=peakwidth,prefilter=prefilter)
       }
 	cat("Peak detection done",fill=TRUE)
 
