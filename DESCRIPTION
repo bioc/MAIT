@@ -1,7 +1,7 @@
 Package: MAIT
 Type: Package
 Title: Statistical Analysis of Metabolomic Data
-Version: 1.17.0
+Version: 1.17.1
 Date: 20-10-2017
 Author: Francesc Fernandez-Albert, 
          Rafael Llorach, Cristina
@@ -12,7 +12,7 @@ Description: The MAIT package contains functions to perform end-to-end
         statistical analysis of LC/MS Metabolomic Data. Special
         emphasis is put on peak annotation and in modular function
         design of the functions.
-biocViews: MassSpectrometry, Metabolomics, Software
+biocViews: ImmunoOncology, MassSpectrometry, Metabolomics, Software
 License: GPL-2
 LazyLoad: yes
 Depends: R (>= 2.10), CAMERA, Rcpp, pls
