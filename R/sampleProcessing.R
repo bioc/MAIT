@@ -183,7 +183,7 @@ if (!is.null(project)) {
 ##########################################################################################################################################################
 
         if (filterMethod=="matchedFilter"){
-	peaks<- xcmsSet(files=fileList,snthresh=snThres,method=filterMethod,sigma=Sigma,max=3,step=rtStep,mzdiff=mzSlices,sclass=classes,nSlaves=nSlaves,fwhm=fwhm,prefilter=prefilter)
+	peaks<- xcmsSet(files=fileList,snthresh=snThres,method=filterMethod,sigma=Sigma,max=3,step=rtStep,mzdiff=mzSlices,sclass=classes,nSlaves=nSlaves,fwhm=fwhm)#,prefilter=prefilter)
       }
         if (filterMethod=="centWave"){
         peaks<- xcmsSet(files=fileList,snthresh=snThres,method=filterMethod,ppm=ppm,mzdiff=mzSlices,sclass=classes,nSlaves=nSlaves,peakwidth=peakwidth,prefilter=prefilter)
