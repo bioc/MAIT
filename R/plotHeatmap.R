@@ -105,7 +105,8 @@ plotHeatmap<-function (MAIT.object = NULL)
         if (length(which(pvalues <= pvals[i])) > 2) {
             png(paste(paste(resultsPath, "Heatmaps/Correlation_Distance_Heatmap_p", 
                 sep = "/"), pvals[i], ".png", sep = ""), height = heights[i], 
-                width = 1024, units = "px", pointsize = 40)
+                width = 1024, units = "px", pointsize = 40,
+                type = c("cairo", "cairo-png", "Xlib", "quartz"))
             if (nchar(names)[1] > 8) {
                 colLength <- 0.45
             }else {
@@ -122,7 +123,8 @@ plotHeatmap<-function (MAIT.object = NULL)
             dev.off()
             png(paste(paste(resultsPath, "Heatmaps/Euclidean_Distance_Heatmap_p", 
                 sep = "/"), pvals[i], ".png", sep = ""), height = heights[i], 
-                width = 1024, units = "px", pointsize = 40)
+                width = 1024, units = "px", pointsize = 40,
+                 type = c("cairo", "cairo-png", "Xlib", "quartz"))
             heatmap.2(t(scale(t(data[which(pvalues <= pvals[i]), 
                 ]), center = TRUE, scale = TRUE)),
                 hclustfun = hclustWard, ColSideColors = cols, 
