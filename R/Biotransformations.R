@@ -271,7 +271,7 @@ perc <-round(which(signIndex[k]==signIndex)/length(signIndex)*100)
 if ((perc %% 10 == 0) && (perc != lp)) { cat(perc,' '); lp <- perc }
 }
 BiotransformationsTable <- (BiotransformationsTable[-1,])
-if(class(BiotransformationsTable)!="list"){
+if(!inherits(BiotransformationsTable, "list")){
         MAIT.object@FeatureInfo@biotransformations <- BiotransformationsTable
       }else{
         aux<-names(BiotransformationsTable)
